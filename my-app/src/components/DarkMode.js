@@ -1,8 +1,12 @@
 import React from 'react';
 
-function DarkMode() {
+function DarkMode({ onDarkModeClick, isDarkMode  }) {
+
     return (
-        <div>
+        <div className='darktoggle'>
+            <button className='darkmode' onClick={onDarkModeClick}>
+                {isDarkMode ? "Light Mode" : "Dark Mode"}
+            </button>
         </div>
     )
 }

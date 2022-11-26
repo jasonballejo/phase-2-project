@@ -1,13 +1,107 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  --accent-color: #BA9653;
+  --background-color: white;
+  --text-color: black;
+  --button-text-color: var(--background-color);
+
+  background-color: #007A33;
+  color: var(--accent-color);
 }
+
+.dark {
+  --background-color: #333;
+  --text-color: white;
+  --button-text-color: white;
+  
+  background-color: var(--background-color);
+}
+
+.darkmode {
+  color: black;
+  border-radius: 50px;
+  padding: 5px;
+  margin: 5px;
+  float: right;
+}
+
+.navbar {
+  height: 60px;
+  text-align: right;
+  display: contents;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.nav-links {
+  list-style: none;
+  padding-top: 10px;
+  /* background-color: red; */
+}
+
+.nav-links li {
+  display: inline-block;
+  font-size: 18px;
+  padding: 0px 20px;
+  text-decoration: none;
+  /* background-color: blue; */
+}
+
+.nav-links li a {
+
+}
+
+.darktoggle {
+  text-align: right;
+  background-color: yellow;
+}
+
+/* .label {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.label input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+} */
