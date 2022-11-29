@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import Navbar from './Navbar';
 import Login from './Login';
@@ -12,6 +12,15 @@ function App() {
   function onDarkModeClick() {
     setIsDarkMode((isDarkMode) => !isDarkMode);
   }
+
+  useEffect( () => {
+    let url = "https://api.tvmaze.com/shows";
+    fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      data.map(newData => console.log(newData))
+    } )
+  },[])
 
   return (
     <div className={(isDarkMode ? "dark" : "light")}> 

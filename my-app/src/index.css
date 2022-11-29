@@ -20,6 +20,7 @@ body {
   --button-text-color: white;
   
   background-color: var(--background-color);
+  padding-bottom: 100%;
 }
 
 .darkmode {
@@ -39,7 +40,6 @@ body {
 }
 
 .nav-links {
-  list-style: none;
   padding-top: 10px;
   /* background-color: red; */
 }
@@ -48,12 +48,14 @@ body {
   display: inline-block;
   font-size: 18px;
   padding: 0px 20px;
-  text-decoration: none;
   /* background-color: blue; */
 }
 
 .nav-links li a {
-
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+  /* background-color: red; */
 }
 
 .darktoggle {
@@ -61,47 +63,7 @@ body {
   background-color: yellow;
 }
 
-/* .label {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+.home {
+  padding-top: 50px;
+  text-align: center;
 }
-
-.label input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  background-color: #ccc;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: #2196f3;
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-} */
