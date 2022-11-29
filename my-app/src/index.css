@@ -63,7 +63,22 @@ body {
   background-color: yellow;
 }
 
-.home {
+.title {
   padding-top: 50px;
+  font-size: 24px;
   text-align: center;
+}
+
+.title p {
+  font-size: 18px;
+}
+
+.searchbar {
+  border-radius: 50px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.searchlabel {
+  padding-right: 5px;
 }

@@ -2,7 +2,9 @@ import React from "react";
 
 function MyList() {
     return (
-        <h1>Favorites Shows</h1>
+        <div className="title">
+            <h1>Favorites Shows</h1>
+        </div>
     )
 }
 
