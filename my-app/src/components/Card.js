@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Card ({ id, name, type, image}) {
+function Card ({ id, name, type, image, summary, year, genres }) {
     const [thumbsUp, setThumbsUp] = useState(0);
 
     const handleClap = () => setThumbsUp(thumbsUp + 1);
@@ -9,18 +9,22 @@ function Card ({ id, name, type, image}) {
     <li className="card">
       <figure className="image">
         <img src={image} alt={name} />
-        <button className="thumbsup" onClick={handleClap}>
-          👍🏼{thumbsUp}
-        </button>
       </figure>
 
       <section className="details">
-        <h4>Home</h4>
-        <p>About</p>
+        <h4>{name}</h4>
+        <p>{year} - {genres}</p>
+        <p>{summary}</p>
       </section>
 
       <footer className="extra">
-        <span className="badge blue">Phase</span>
+        <button className="thumbsup" onClick={handleClap}>
+          👍🏼{thumbsUp}
+        </button>
+        <button className="watchlistbtn" onClick={handleClap}>
+          ➕ <span>WATCHLIST</span>
+            {/* {thumbsUp} */}
+        </button>
       </footer>
     </li>
   );

@@ -20,7 +20,7 @@ body {
   --button-text-color: white;
   
   background-color: var(--background-color);
-  padding-bottom: 100%;
+  /* padding-bottom: 100%; */
 }
 
 .darkmode {
@@ -71,6 +71,7 @@ body {
 
 .title p {
   font-size: 18px;
+  padding-bottom: 30px;
 }
 
 .searchbar {
@@ -87,7 +88,7 @@ body {
   /* display: grid; */
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
-
+  padding: 8px;
   display: grid;
   grid-template-rows: auto 1fr auto;
   border: 2px solid var(--accent-color);
@@ -108,8 +109,20 @@ body {
 
 .card .image img {
   width: 100%;
-  height: 175px;
+  height: 180px;
   object-fit: cover;
+}
+
+.thumbsup {
+  border-radius: 20px;
+  width: 52px;
+  height: 32px;
+}
+
+.watchlistbtn {
+  border-radius: 20px;
+  width: 120px;
+  height: 32px;
 }
 
 .card .image .thumbsup {
@@ -123,7 +136,7 @@ body {
 .card .image .thumbsup:focus,
 .card .image .thumbsup:hover {
   color: transparent;
-  /* text-shadow: 0 0 0 var(--color); */
+  text-shadow: 0 0 0 var(--color);
 }
 
 .card .details {
@@ -136,6 +149,7 @@ body {
 
 .card .details p {
   margin: 0.5rem 0;
+  color: white;
 }
 
 .card .extra {
