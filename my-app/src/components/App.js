@@ -8,29 +8,20 @@ import Home from "./Home";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const [searchQuery, setSearchQuery] = useState("")
-  const [showTitle, setShowTitle] = useState([])
+  const [show, setShow] = useState([])
 
   function onDarkModeClick() {
     setIsDarkMode((isDarkMode) => !isDarkMode);
   }
 
-  const addShowTitle = (newShow) => {
-    setShowTitle(shows => {
-      return [...shows, newShow]
-    })
+  const addShow = (newShow) => {
+    setShow((showObj) => [...showObj, newShow])
   }
 
   useEffect( () => {
-    let url = "https://api.tvmaze.com/shows";
-    if (searchQuery) {
-      url = `https://api.tvmaze.com/singlesearch/shows?q=${searchQuery}`
-    } 
-    fetch(url)
+    fetch("http://localhost:3000/shows")
       .then((res) => res.json())
-      .then((data) => {
-        data.map(newData => setShowTitle(newData))
-    })
+      .then(showData => setShow(showData))
   },[])
 
   return (
@@ -38,9 +29,7 @@ function App() {
       <Navbar onDarkModeClick={onDarkModeClick} isDarkMode={isDarkMode} />
       <Routes>
         <Route path="/" element={<Home 
-          searchQuery={searchQuery} 
-          setSearchQuery={setSearchQuery} 
-          addShowTitle={addShowTitle}
+          show={show}
         />} />
         <Route path="/about" element={<About />} />
         <Route path="/mylist" element={<MyList />} />

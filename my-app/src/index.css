@@ -10,7 +10,7 @@ body {
   --text-color: black;
   --button-text-color: var(--background-color);
 
-  background-color: #007A33;
+  background-color: white;
   color: var(--accent-color);
 }
 
@@ -79,6 +79,65 @@ body {
   margin: 5px;
 }
 
-.searchlabel {
-  padding-right: 5px;
+/* TEST */
+.card {
+  /* margin: 0 auto; */
+  /* list-style: none; */
+  width: 100%;
+  /* display: grid; */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  border: 2px solid var(--accent-color);
+}
+
+@media screen and (max-width: 588px) {
+  .card {
+    display: block;
+    max-width: inherit;
+  }
+}
+
+.card .image {
+  max-height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card .image img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+}
+
+.card .image .thumbsup {
+  color: transparent;
+  text-shadow: 0 0 0 red;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.card .image .thumbsup:focus,
+.card .image .thumbsup:hover {
+  color: transparent;
+  /* text-shadow: 0 0 0 var(--color); */
+}
+
+.card .details {
+  margin: 0.5rem;
+}
+
+.card .details h4 {
+  margin: 0.5rem 0;
+}
+
+.card .details p {
+  margin: 0.5rem 0;
+}
+
+.card .extra {
+  margin-top: auto;
 }
