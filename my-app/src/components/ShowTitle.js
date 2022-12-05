@@ -20,7 +20,7 @@ const ShowTitle = ({ addShowTitle }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch("https://api.tvmaze.com/shows", {
+        fetch("http://localhost:3000/shows", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

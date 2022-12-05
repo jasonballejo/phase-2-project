@@ -1,3 +1,10 @@
+:root {
+  --accent-color: #BA9653;
+  --background-color: white;
+  --text-color: black;
+  --dark-mode-background-color: #333;
+  --dark-mode-text-color: white;
+}
 * {
   margin: 0;
   padding: 0;
@@ -5,30 +12,26 @@
 }
 
 body {
-  --accent-color: #BA9653;
-  --background-color: white;
-  --text-color: black;
-  --button-text-color: var(--background-color);
-
   background-color: white;
   color: var(--accent-color);
 }
 
-.dark {
-  --background-color: #333;
-  --text-color: white;
-  --button-text-color: white;
-  
-  background-color: var(--background-color);
-  /* padding-bottom: 100%; */
-}
-
-.darkmode {
+.darkbtn {
   color: black;
   border-radius: 50px;
   padding: 5px;
   margin: 5px;
   float: right;
+}
+
+.dark {
+  background-color: var(--dark-mode-background-color);
+  color: var(--dark-mode-text-color);
+  min-height: 100vh;
+}
+
+.light { 
+  background-color: white;
 }
 
 .navbar {
@@ -71,7 +74,7 @@ body {
 
 .title p {
   font-size: 18px;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 }
 
 .searchbar {
@@ -80,7 +83,6 @@ body {
   margin: 5px;
 }
 
-/* TEST */
 .card {
   /* margin: 0 auto; */
   /* list-style: none; */
@@ -102,14 +104,14 @@ body {
 }
 
 .card .image {
-  max-height: 200px;
+  max-height: 400px;
   overflow: hidden;
   position: relative;
 }
 
 .card .image img {
   width: 100%;
-  height: 180px;
+  height: 400px;
   object-fit: cover;
 }
 
@@ -149,9 +151,41 @@ body {
 
 .card .details p {
   margin: 0.5rem 0;
-  color: white;
+  color: var(--accent-color);
 }
 
 .card .extra {
   margin-top: auto;
+}
+
+.favcard {
+  /* margin: 0 auto; */
+  /* list-style: none; */
+  width: 100%;
+  /* display: grid; */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 8px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  border: 2px solid var(--accent-color);
+}
+
+@media screen and (max-width: 588px) {
+  .favcard {
+    display: block;
+    max-width: inherit;
+  }
+}
+
+.favcard .favimage {
+  max-height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.favcard .favimage img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
 }

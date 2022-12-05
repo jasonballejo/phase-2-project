@@ -11,10 +11,7 @@ function Navbar({ onDarkModeClick, isDarkMode  }) {
                     <NavLink to="/" exact>Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/about" exact>About</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/mylist" exact>MyList</NavLink>
+                    <NavLink to="/Watchlist" exact>Watchlist</NavLink>
                 </li>
                 <li>
                     <NavLink to="/login" exact>Login</NavLink>

@@ -1,28 +1,23 @@
 import { useState } from "react";
 import Watchlist from "./Watchlist";
 
-function Card ({ id, name, type, image, summary, year, genres, handleFavClicks, show }) {
+function Card2 ({ id, name, type, image, summary, year, genres, show, handleDeleteClick }) {
     const [thumbsUp, setThumbsUp] = useState(0);
 
     const handleClap = () => setThumbsUp(thumbsUp + 1);
 
   return (
-    <li className="card">
-      <figure className="image">
+    <li className="favcard">
+      <figure className="favimage">
         <img src={image} alt={name} />
       </figure>
-
-      <section className="details">
-        <h4>{name}</h4>
-        <p>{year} - {genres}</p>
-      </section>
 
       <footer className="extra">
         <button className="thumbsup" onClick={handleClap}>
           👍🏼{thumbsUp}
         </button>
-        <button className="watchlistbtn" onClick={() => handleFavClicks(show)}>
-          ➕ <span>WATCHLIST</span>
+        <button className="watchlistbtn" onClick={() => handleDeleteClick(show)}>
+          ➖ <span>WATCHLIST</span>
             {/* {thumbsUp} */}
         </button>
       </footer>
@@ -31,4 +26,4 @@ function Card ({ id, name, type, image, summary, year, genres, handleFavClicks, 
 };
 
 
-export default Card;
+export default Card2;
