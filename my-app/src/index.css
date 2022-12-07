@@ -121,10 +121,19 @@ body {
   height: 32px;
 }
 
-.watchlistbtn {
+.add {
   border-radius: 20px;
   width: 120px;
   height: 32px;
+ background-color: white;
+}
+
+.remove {
+  border-radius: 20px;
+  width: 120px;
+  height: 32px;
+  color: white;
+  background-color: var(--accent-color);
 }
 
 .card .image .thumbsup {

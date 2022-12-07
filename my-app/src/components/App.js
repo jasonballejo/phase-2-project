@@ -11,52 +11,120 @@ function App() {
   const [favorites, setFavorites] = useState([])
 
   function onDarkModeClick() {
-    setIsDarkMode((isDarkMode) => !isDarkMode);
+  setIsDarkMode((isDarkMode) => !isDarkMode);
+}
+
+// const addShow = (newShow) => {
+//   setShow((showObj) => [...showObj, newShow])
+// }
+
+useEffect( () => {
+  fetch("http://localhost:3000/shows")
+    .then((res) => res.json())
+    .then(showData => setShows(showData))
+},[])
+
+const addFavShow = (show) => {
+  const newFavList = [...favorites, show];
+  setFavorites(newFavList);
+};
+
+function handleDeleteClick() {
+  fetch(`http://localhost:3000/shows/${shows.id}`, {
+    method: "DELETE",
+  })
+    .then((r) => r.json())
+    .then(() => console.log("deleted!"));
+}
+
+  function handleUpdateItem(updatedItem) {
+    const updatedItems = shows.map((show) => {
+      if (show.id === updatedItem.id) {
+        return updatedItem;
+      } else {
+        return show;
+      }
+    });
+    setShows(updatedItems);
   }
 
-  // const addShow = (newShow) => {
-  //   setShow((showObj) => [...showObj, newShow])
-  // }
-
-  useEffect( () => {
-    fetch("http://localhost:3000/shows")
-      .then((res) => res.json())
-      .then(showData => setShows(showData))
-  },[])
-
-  const addFavShow = (show) => {
-    const newFavList = [...favorites, show];
-    setFavorites(newFavList);
-  };
-
-  function handleDeleteClick() {
-    fetch(`http://localhost:3000/shows/${shows.id}`, {
-      method: "DELETE",
-    })
-      .then((r) => r.json())
-      .then(() => console.log("deleted!"));
-  }
-
-  // function handleUpdateItem(updatedItem) {
-  //   console.log("In ShoppingCart:", updatedItem);
-  // }
-
-  return (
-    <div className={(isDarkMode ? "dark" : "light")}> 
-      <Navbar onDarkModeClick={onDarkModeClick} isDarkMode={isDarkMode} />
-      <Routes>
-        <Route path="/" element={<Home 
-          shows={shows}
-          handleFavClicks={addFavShow}
-        />} />
-        <Route path="/watchlist" element={<Watchlist 
-          show={favorites}
-          handleDeleteClick={handleDeleteClick}
-        />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </div>
-  );
+return (
+  <div className={(isDarkMode ? "dark" : "light")}> 
+    <Navbar onDarkModeClick={onDarkModeClick} isDarkMode={isDarkMode} />
+    <Routes>
+      <Route path="/" element={<Home 
+        shows={shows}
+        handleFavClicks={addFavShow}
+        updateItem={handleUpdateItem}
+      />} />
+      <Route path="/watchlist" element={<Watchlist 
+        show={favorites}
+        handleDeleteClick={handleDeleteClick}
+      />} />
+      <Route path="/login" element={<Login />} />
+    </Routes>
+  </div>
+);
 }
 
 export default App;
+
+
+
+// test
+
+// function App() {
+//   const [isDarkMode, setIsDarkMode] = useState(true);
+//   const [shows, setShows] = useState([])
+//   const [favorites, setFavorites] = useState([])
+
+//   function onDarkModeClick() {
+//   setIsDarkMode((isDarkMode) => !isDarkMode);
+// }
+
+// // const addShow = (newShow) => {
+// //   setShow((showObj) => [...showObj, newShow])
+// // }
+
+// useEffect( () => {
+//   fetch("http://localhost:3000/shows")
+//     .then((res) => res.json())
+//     .then(showData => setShows(showData))
+// },[])
+
+// const addFavShow = (show) => {
+//   const newFavList = [...favorites, show];
+//   setFavorites(newFavList);
+// };
+
+// function handleDeleteClick() {
+//   fetch(`http://localhost:3000/shows/${shows.id}`, {
+//     method: "DELETE",
+//   })
+//     .then((r) => r.json())
+//     .then(() => console.log("deleted!"));
+// }
+
+// // function handleUpdateItem(updatedItem) {
+// //   console.log("In ShoppingCart:", updatedItem);
+// // }
+
+// return (
+//   <div className={(isDarkMode ? "dark" : "light")}> 
+//     <Navbar onDarkModeClick={onDarkModeClick} isDarkMode={isDarkMode} />
+//     <Routes>
+//       <Route path="/" element={<Home 
+//         shows={shows}
+//         handleFavClicks={addFavShow}
+//       />} />
+//       <Route path="/watchlist" element={<Watchlist 
+//         show={favorites}
+//         handleDeleteClick={handleDeleteClick}
+//       />} />
+//       <Route path="/login" element={<Login />} />
+//     </Routes>
+//   </div>
+// );
+// }
+
+// export default App;

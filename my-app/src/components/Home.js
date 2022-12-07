@@ -2,7 +2,7 @@ import React from "react";
 // import ShowTitle from "./ShowTitle";
 import Card from "./Card";
 
-function Home({ shows, handleFavClicks }) {
+function Home({ shows, handleFavClicks, updateItem }) {
     return (
         <div className="title">
             <h1>Welcome to SHOWFLIX!</h1><br />
@@ -15,6 +15,7 @@ function Home({ shows, handleFavClicks }) {
                         {...show} 
                         handleFavClicks={handleFavClicks}
                         show={show}
+                        updateItem={updateItem}
                     />)}
             </ul>
         </div>
