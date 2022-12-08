@@ -10,7 +10,7 @@ function Home({ shows, updateItem, addFavorites }) {
 
             <ul className="card">
                 {shows.map(show => 
-                    <Card 
+                    <Card  
                         key={show.id} 
                         {...show} 
                         show={show}

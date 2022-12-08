@@ -1,20 +1,17 @@
 import React from "react";
 import FavCard from "./FavCard"
 
-function Watchlist({ show, 
-    // handleDeleteClick 
-    }) {
+function Watchlist({ favorites }) {
     return (
         <div className="title">
             <h1>Favorites Shows</h1>
             
             <ul className="card">
-                {show.map(show => 
+                {favorites.map(fav => 
                     <FavCard 
-                        key={show.id} 
-                        {...show} 
-                        show={show}
-                        // handleDeleteClick={handleDeleteClick}
+                        key={fav.id} 
+                        {...fav} 
+                        fav={fav}
                 />)}
             </ul>
         </div>

@@ -26,6 +26,7 @@ const addFavShow = (show) => {
 };
 
   function handleUpdateItem(updatedItem) {
+    console.log(updatedItem)
     const updatedItems = shows.map((show) => {
       if (show.id === updatedItem.id) {
         return updatedItem;
@@ -46,7 +47,7 @@ return (
         addFavorites={addFavShow}
       />} />
       <Route path="/watchlist" element={<Watchlist 
-        show={favorites}
+        favorites={favorites}
       />} />
       <Route path="/login" element={<Login />} />
     </Routes>
