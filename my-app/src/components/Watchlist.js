@@ -1,7 +1,9 @@
 import React from "react";
 import FavCard from "./FavCard"
 
-function Watchlist({ show, handleDeleteClick }) {
+function Watchlist({ show, 
+    // handleDeleteClick 
+    }) {
     return (
         <div className="title">
             <h1>Favorites Shows</h1>
@@ -12,7 +14,7 @@ function Watchlist({ show, handleDeleteClick }) {
                         key={show.id} 
                         {...show} 
                         show={show}
-                        handleDeleteClick={handleDeleteClick}
+                        // handleDeleteClick={handleDeleteClick}
                 />)}
             </ul>
         </div>

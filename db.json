@@ -110,5 +110,18 @@
       "summary": "Out of the blackness, the first thing Jack senses is pain. Then burning sun. A Bamboo forest. Smoke. Screams. With a rush comes the horrible awareness that the plane he was on tore apart in mid-air and crashed on a Pacific island. From there it's a blur, as his doctor's instinct kicks in: people need his help.",
       "isInWatchlist": false
     }
+  ],
+  "watchlist": [
+    {
+      "id": 1,
+      "name": "The Simpsons",
+      "type": "Animation",
+      "language": "English",
+      "genres": "Comedy, Family",
+      "year": 2022,
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/423/1058261.jpg",
+      "summary": "The Simpsons is the longest running scripted show in US television history. It captures the adventures of Homer, Marge, Maggie, Bart and Lisa who are living in a fictional town called Springfield.",
+      "isInWatchlist": false
+    }
   ]
 }

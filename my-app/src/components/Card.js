@@ -1,13 +1,12 @@
 import { useState } from "react";
 import Watchlist from "./Watchlist";
 
-function Card ({ id, name, type, image, summary, year, genres, handleFavClicks, show, updateItem }) {
+function Card ({ id, name, type, image, summary, year, genres, show, updateItem, addFavorites }) {
     const [thumbsUp, setThumbsUp] = useState(0);
 
-    const handleClap = () => setThumbsUp(thumbsUp + 1);
+    const handleThumbsUp = () => setThumbsUp(thumbsUp + 1);
 
-
-    function handleAddToWatchlist() {
+    function handleClickAddToWatchlist() {
         fetch(`http://localhost:3000/shows/${show.id}`, {
             method: "PATCH",
             headers: {
@@ -18,7 +17,7 @@ function Card ({ id, name, type, image, summary, year, genres, handleFavClicks, 
             }),
         })
             .then((r) => r.json())
-            .then((updatedItem) => updateItem(updatedItem));
+            .then((updatedItem) => updateItem(updatedItem) || addFavorites(updatedItem));
         }
 
     return (
@@ -33,16 +32,15 @@ function Card ({ id, name, type, image, summary, year, genres, handleFavClicks, 
           </section>
     
           <footer className="extra">
-            <button className="thumbsup" onClick={handleClap}>
+            <button className="thumbsup" onClick={handleThumbsUp}>
               👍🏼{thumbsUp}
             </button>
 
             <button 
                 className={show.isInWatchlist ? "remove" : "add"}
-                onClick={handleAddToWatchlist}
+                onClick={handleClickAddToWatchlist}
             >
                 {show.isInWatchlist ? "➖ WATCHLIST" : "➕ WATCHLIST"}
-                {/* {thumbsUp} */}
             </button>
           </footer>
         </li>
@@ -51,36 +49,3 @@ function Card ({ id, name, type, image, summary, year, genres, handleFavClicks, 
     
     
     export default Card;
-
-    // test 
-    // function Card ({ id, name, type, image, summary, year, genres, handleFavClicks, show }) {
-    //     const [thumbsUp, setThumbsUp] = useState(0);
-    
-    //     const handleClap = () => setThumbsUp(thumbsUp + 1);
-    
-    //     return (
-    //         <li className="card">
-    //           <figure className="image">
-    //             <img src={image} alt={name} />
-    //           </figure>
-        
-    //           <section className="details">
-    //             <h4>{name}</h4>
-    //             <p>{year} - {genres}</p>
-    //           </section>
-        
-    //           <footer className="extra">
-    //             <button className="thumbsup" onClick={handleClap}>
-    //               👍🏼{thumbsUp}
-    //             </button>
-    //             <button className="watchlistbtn" onClick={() => handleFavClicks(show)}>
-    //               ➕ <span>WATCHLIST</span>
-    //                 {/* {thumbsUp} */}
-    //             </button>
-    //           </footer>
-    //         </li>
-    //       );
-    //     };
-        
-        
-    //     export default Card;

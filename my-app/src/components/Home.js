@@ -2,7 +2,7 @@ import React from "react";
 // import ShowTitle from "./ShowTitle";
 import Card from "./Card";
 
-function Home({ shows, handleFavClicks, updateItem }) {
+function Home({ shows, updateItem, addFavorites }) {
     return (
         <div className="title">
             <h1>Welcome to SHOWFLIX!</h1><br />
@@ -13,9 +13,9 @@ function Home({ shows, handleFavClicks, updateItem }) {
                     <Card 
                         key={show.id} 
                         {...show} 
-                        handleFavClicks={handleFavClicks}
                         show={show}
                         updateItem={updateItem}
+                        addFavorites={addFavorites}
                     />)}
             </ul>
         </div>
