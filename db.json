@@ -116,6 +116,11 @@
       "id": 1,
       "username": "Bruce Wayne",
       "password": "Batman123"
+    },
+    {
+      "name": "Jason",
+      "password": "Password123",
+      "id": 2
     }
   ]
 }

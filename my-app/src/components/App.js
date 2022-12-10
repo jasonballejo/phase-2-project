@@ -4,13 +4,12 @@ import Navbar from './Navbar';
 import Login from './Login';
 import Watchlist from './Watchlist';
 import Home from "./Home";
-import Register from "./Register";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [shows, setShows] = useState([])
   const [favorites, setFavorites] = useState([])
-  const [currentForm, setCurrentForm] = useState('login')
+  const [currentLoginForm, setCurrentLoginForm] = useState('sign-in')
 
   function onDarkModeClick() {
   setIsDarkMode((isDarkMode) => !isDarkMode);
@@ -21,10 +20,6 @@ useEffect( () => {
     .then((res) => res.json())
     .then(showData => setShows(showData))
 },[])
-
-const toggleForm = (formName) => {
-  setCurrentForm(formName)
-}
 
 const addFavShow = (show) => {
   const newFavList = [...favorites, show];
@@ -43,10 +38,6 @@ const addFavShow = (show) => {
     setShows(updatedItems);
   }
 
-  function handleUpdateLogin(updateLogin) {
-    console.log(updateLogin)
-  }
-
 return (
   <div className={(isDarkMode ? "dark" : "light")}> 
     <Navbar onDarkModeClick={onDarkModeClick} isDarkMode={isDarkMode} />
@@ -59,9 +50,8 @@ return (
       <Route path="/watchlist" element={<Watchlist 
         favorites={favorites}
       />} />
-      <Route path="/login" 
-        element={currentForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm} />}
-      />
+      <Route path="/login" element={<Login /> 
+      } />
     </Routes>
   </div>
 );
