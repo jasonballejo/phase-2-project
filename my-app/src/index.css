@@ -8,7 +8,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -199,6 +198,12 @@ body {
   height: 400px;
   object-fit: cover;
 }
+.formcontainer {
+  background-color: rgb(172, 172, 172);
+  padding: 100px;
+  margin: auto;
+  width: 30%;
+}
 
 .formcontainer, .loginform, .registerform {
   display: flex;
@@ -206,10 +211,18 @@ body {
   align-items: center;
   text-align: center;
   justify-content: center;
-  min-height: 30vh;
+  font-size: large;
 }
 
 .submitbutton {
   color: black;
   margin: 5px;
+}
+
+.linkbutton {
+  background-color: rgb(172, 172, 172);
+  color: black;
+  text-decoration: underline;
+  border: none;
+  cursor: pointer;
 }

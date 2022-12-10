@@ -64,7 +64,7 @@ function Login({ onFormSwitch }) {
 
                 <button className="submitbutton" type="submit" value="Sign Up">Login</button> 
             </form>
-            <button onClick={() => onFormSwitch('register')}>Don't have an account? Register Here.</button>
+            <button className="linkbutton" onClick={() => onFormSwitch('register')}>Don't have an account? Register Here.</button>
         </div>
     )
 }
