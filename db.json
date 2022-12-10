@@ -111,17 +111,11 @@
       "isInWatchlist": false
     }
   ],
-  "watchlist": [
+  "login": [
     {
       "id": 1,
-      "name": "The Simpsons",
-      "type": "Animation",
-      "language": "English",
-      "genres": "Comedy, Family",
-      "year": 2022,
-      "image": "https://static.tvmaze.com/uploads/images/original_untouched/423/1058261.jpg",
-      "summary": "The Simpsons is the longest running scripted show in US television history. It captures the adventures of Homer, Marge, Maggie, Bart and Lisa who are living in a fictional town called Springfield.",
-      "isInWatchlist": false
+      "username": "Bruce Wayne",
+      "password": "Batman123"
     }
   ]
 }

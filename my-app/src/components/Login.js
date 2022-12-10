@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 
-function Login() {
+function Login({ onFormSwitch }) {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
     const [formData, setFormData] = useState({
         username: "",
         password: "",
     })
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        console.log(formData);
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log(email);
     }
 
     function handleChange(event) {
@@ -20,30 +23,48 @@ function Login() {
           })
     }
 
-    console.log(formData)
+    // function handleClickStoreLogin() {
+    //     console.log("clcked");
+    //     }
+
+    // function handleClickStoreLogin() {
+    //     fetch(`http://localhost:3000/login/${login.id}`, {
+    //         method: "PATCH",
+    //         headers: {
+    //         "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({
+    //         isInWatchlist: !login.isInWatchlist,
+    //         }),
+    //     })
+    //         .then((r) => r.json())
+    //         .then((updatedItem) => setLogin(updatedItem));
+    //     }
 
     return (
-        <div className="title">
-            <form onSubmit={handleSubmit}>
-                <h1>Create an Account</h1>
+        <div className="formcontainer">
+            <form className="loginform" onSubmit={handleSubmit}>
                 <label htmlFor="username">Username</label>
                 <input
-                    type="text"
+                    type="email"
+                    placeholder="Your Email"
                     id="username"
-                    value={formData.username}
-                    onChange={handleChange}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                 />
 
                 <label htmlFor="password">Password</label>
                 <input
                     type="password"
+                    placeholder="Your Password"
                     id="password"
-                    value={formData.password}
-                    onChange={handleChange}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                 />
 
-                <input type="submit" value="Sign Up" />
+                <button className="submitbutton" type="submit" value="Sign Up">Login</button> 
             </form>
+            <button onClick={() => onFormSwitch('register')}>Don't have an account? Register Here.</button>
         </div>
     )
 }
