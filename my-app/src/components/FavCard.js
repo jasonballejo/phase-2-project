@@ -1,8 +1,7 @@
 import { useState } from "react";
-import Watchlist from "./Watchlist";
+import Watchlist from "./Watchlist"; 
 
-function Card2 ({ id, name, type, image, summary, year, genres, fav, 
-}) {
+function Card2 ({ id, name, type, image, summary, year, genres, fav }) {
     const [thumbsUp, setThumbsUp] = useState(0);
 
     const handleClap = () => setThumbsUp(thumbsUp + 1);

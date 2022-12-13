@@ -2,7 +2,7 @@ import React from "react";
 // import ShowTitle from "./ShowTitle";
 import Card from "./Card";
 
-function Home({ shows, updateItem, addFavorites }) {
+function Home({ shows, updateItem, favorites, setFavorites, addFavShow }) {
     return (
         <div className="title">
             <h1>Welcome to SHOWFLIX!</h1><br />
@@ -15,7 +15,9 @@ function Home({ shows, updateItem, addFavorites }) {
                         {...show} 
                         show={show}
                         updateItem={updateItem}
-                        addFavorites={addFavorites}
+                        favorites={favorites}
+                        setFavorites={setFavorites}
+                        addFavShow={addFavShow}
                     />)}
             </ul>
         </div>

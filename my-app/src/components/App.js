@@ -45,7 +45,9 @@ return (
       <Route path="/" element={<Home 
         shows={shows}
         updateItem={handleUpdateItem}
-        addFavorites={addFavShow}
+        favorites={favorites}
+        setFavorites={setFavorites}
+        addFavShow={addFavShow}
       />} />
       <Route path="/watchlist" element={<Watchlist 
         favorites={favorites}

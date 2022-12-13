@@ -1,24 +1,26 @@
 import { useState } from "react";
-import Watchlist from "./Watchlist";
+import Watchlist from "./Watchlist"; 
 
-function Card ({ id, name, type, image, summary, year, genres, show, updateItem, addFavorites }) {
+function Card ({ id, name, type, image, summary, year, genres, show, updateItem, favorites, setFavorites, addFavShow }) {
     const [thumbsUp, setThumbsUp] = useState(0);
 
     const handleThumbsUp = () => setThumbsUp(thumbsUp + 1);
 
-    function handleClickAddToWatchlist() {
-        fetch(`http://localhost:3000/shows/${show.id}`, {
-            method: "PATCH",
+    function handleShowSubmit() {
+        fetch(`http://localhost:3000/watchlist`, {
+            method: "POST",
             headers: {
-            "Content-Type": "application/json",
+              "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-            isInWatchlist: !show.isInWatchlist,
-            }),
-        })
-            .then((r) => r.json())
-            .then((updatedItem) => updateItem(updatedItem) || addFavorites(updatedItem));
+            body: JSON.stringify(setFavorites),
+            })
+              .then((r) => r.json())
+              .then((updatedWatchlist) => setFavorites(updatedWatchlist));
         }
+
+        // function submit() {
+        //   console.log("submitted")
+        // }
 
     return (
         <li className="card">
@@ -38,7 +40,10 @@ function Card ({ id, name, type, image, summary, year, genres, show, updateItem,
 
             <button 
                 className={show.isInWatchlist ? "remove" : "add"}
-                onClick={handleClickAddToWatchlist}
+                  onClick={addFavShow}
+                  onSubmit={handleShowSubmit} 
+                            //See if we can click and submit a POST request
+                                      // If we can then run a GET request in the watchlist
             >
                 {show.isInWatchlist ? "➖ WATCHLIST" : "➕ WATCHLIST"}
             </button>

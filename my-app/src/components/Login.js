@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function Login() {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const [isSignedIn, setIsSignedIn] = useState("sign-in")
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -25,6 +26,10 @@ function Login() {
         username,
         password
     }
+
+    function signedInClicked() {
+        setIsSignedIn((isSignedIn) => !isSignedIn);
+      }
 
     return (
         <div className="formcontainer">
@@ -51,7 +56,8 @@ function Login() {
                 <input 
                     className="submitbutton" 
                     type="submit" 
-                    value="Sign-in"
+                    value={isSignedIn ? 'Sign-in' : 'Sign-out'}
+                    onClick={signedInClicked}
                 /> 
             </form>
         </div>
