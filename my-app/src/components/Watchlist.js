@@ -1,7 +1,9 @@
 import React from "react";
 import FavCard from "./FavCard"
 
-function Watchlist({ favorites }) {
+function Watchlist({ shows }) {
+    const favorites = shows.filter(object => object.isInWatchlist) 
+
     return (
         <div className="title">
             <h1>Favorites Shows</h1>

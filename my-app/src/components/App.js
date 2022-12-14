@@ -8,8 +8,6 @@ import Home from "./Home";
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [shows, setShows] = useState([])
-  const [favorites, setFavorites] = useState([])
-  const [currentLoginForm, setCurrentLoginForm] = useState('sign-in')
 
   function onDarkModeClick() {
   setIsDarkMode((isDarkMode) => !isDarkMode);
@@ -21,13 +19,18 @@ useEffect( () => {
     .then(showData => setShows(showData))
 },[])
 
-const addFavShow = (show) => {
-  const newFavList = [...favorites, show];
-  setFavorites(newFavList);
-};
+  function handleWatchListItem(updatedShow) {
+    const updatedWatchlist = shows.map((show) => {
+      if (show.id === updatedShow.id){
+        return updatedShow;
+      } else {
+        return show
+      }
+    })
+    setShows(updatedWatchlist) 
+  }
 
   function handleUpdateItem(updatedItem) {
-    console.log(updatedItem)
     const updatedItems = shows.map((show) => {
       if (show.id === updatedItem.id) {
         return updatedItem;
@@ -45,12 +48,10 @@ return (
       <Route path="/" element={<Home 
         shows={shows}
         updateItem={handleUpdateItem}
-        favorites={favorites}
-        setFavorites={setFavorites}
-        addFavShow={addFavShow}
+        handleWatchListItem={handleWatchListItem}
       />} />
       <Route path="/watchlist" element={<Watchlist 
-        favorites={favorites}
+        shows={shows}
       />} />
       <Route path="/login" element={<Login /> 
       } />

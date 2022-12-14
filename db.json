@@ -117,18 +117,5 @@
       "username": "Bruce Wayne",
       "password": "Batman123"
     }
-  ],
-  "watchlist": [
-    {
-      "id": 1,
-      "name": "Lost",
-      "type": "Scripted",
-      "language": "English",
-      "genres": "Drama, Adventure",
-      "year": 2010,
-      "image": "https://static.tvmaze.com/uploads/images/original_untouched/0/1389.jpg",
-      "summary": "Out of the blackness, the first thing Jack senses is pain. Then burning sun. A Bamboo forest. Smoke. Screams. With a rush comes the horrible awareness that the plane he was on tore apart in mid-air and crashed on a Pacific island. From there it's a blur, as his doctor's instinct kicks in: people need his help.",
-      "isInWatchlist": false
-    }
   ]
 }

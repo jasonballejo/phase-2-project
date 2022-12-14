@@ -124,7 +124,8 @@ body {
   border-radius: 20px;
   width: 120px;
   height: 32px;
- background-color: white;
+  background-color: white;
+  cursor: pointer;
 }
 
 .remove {
@@ -133,6 +134,7 @@ body {
   height: 32px;
   color: white;
   background-color: var(--accent-color);
+  cursor: pointer;
 }
 
 .card .image .thumbsup {
