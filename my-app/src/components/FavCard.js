@@ -1,14 +1,32 @@
 import { useState } from "react";
 import Watchlist from "./Watchlist"; 
 
-function Card2 ({ id, name, type, image, summary, year, genres, fav }) {
+function Card2 ({ id, name, image, show, isInWatchlist, handleWatchListItem }) {
     const [thumbsUp, setThumbsUp] = useState(0);
 
     const handleClap = () => setThumbsUp(thumbsUp + 1);
 
+    // const addWatchlistOnClick = () => {
+    //   console.log("Showing:", fetch(`http://localhost:3000/shows/${id}`));
+    // };
+
+    const addWatchlistOnClick = () => {
+      fetch(`http://localhost:3000/shows/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      isInWatchlist: !isInWatchlist,
+    }),
+  })
+    .then((r) => r.json())
+    .then((updatedItem) => handleWatchListItem(updatedItem));
+    };
+    
   return (
-    <li className="favcard">
-      <figure className="favimage">
+    <li className="card">
+      <figure className="image">
         <img src={image} alt={name} />
       </figure>
 
@@ -16,11 +34,14 @@ function Card2 ({ id, name, type, image, summary, year, genres, fav }) {
         <button className="thumbsup" onClick={handleClap}>
           👍🏼{thumbsUp}
         </button>
-        <button className="watchlistbtn" 
+
+        <button 
+          className="remove"
+          onClick={addWatchlistOnClick}
         >
-          ➖ <span>WATCHLIST</span>
-            {/* {thumbsUp} */}
+          ➖  REMOVE
         </button>
+        
       </footer>
     </li>
   );

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Watchlist from "./Watchlist"; 
 
-function Card ({ id, name, type, image, summary, year, genres, show, isInWatchlist, updateItem, handleWatchListItem }) {
+function Card ({ name, image, year, genres, show, handleWatchListItem }) {
     const [thumbsUp, setThumbsUp] = useState(0);
     const handleThumbsUp = () => setThumbsUp(thumbsUp + 1);
 
@@ -39,7 +39,7 @@ function Card ({ id, name, type, image, summary, year, genres, show, isInWatchli
                 className={show.isInWatchlist ? "remove" : "add"}
                 onClick={addWatchlistOnClick}
             >
-                {show.isInWatchlist ? "➖ WATCHLIST" : "➕ WATCHLIST" }
+                {show.isInWatchlist ? "➖  REMOVE" : "➕ WATCHLIST" }
             </button>
           </footer>
         </li>

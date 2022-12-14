@@ -52,6 +52,7 @@ return (
       />} />
       <Route path="/watchlist" element={<Watchlist 
         shows={shows}
+        handleWatchListItem={handleWatchListItem}
       />} />
       <Route path="/login" element={<Login /> 
       } />

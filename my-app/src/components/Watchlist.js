@@ -1,12 +1,12 @@
 import React from "react";
 import FavCard from "./FavCard"
 
-function Watchlist({ shows }) {
+function Watchlist({ shows, handleWatchListItem }) {
     const favorites = shows.filter(object => object.isInWatchlist) 
 
     return (
         <div className="title">
-            <h1>Favorites Shows</h1>
+            <h1>Watchlist</h1>
             
             <ul className="card">
                 {favorites.map(fav => 
@@ -14,6 +14,8 @@ function Watchlist({ shows }) {
                         key={fav.id} 
                         {...fav} 
                         fav={fav}
+                        show={shows}
+                        handleWatchListItem={handleWatchListItem}
                 />)}
             </ul>
         </div>
