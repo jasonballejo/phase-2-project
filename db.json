@@ -31,7 +31,7 @@
       "year": 2019,
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/173/433868.jpg",
       "summary": "The Big Bang Theory is a comedy about brilliant physicists, Leonard and Sheldon, who are the kind of beautiful minds that understand how the universe works. But none of that genius helps them interact with people, especially women. All this begins to change when a free-spirited beauty named Penny moves in next door.",
-      "isInWatchlist": true
+      "isInWatchlist": false
     },
     {
       "id": 4,
@@ -42,7 +42,7 @@
       "year": 2022,
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/423/1058269.jpg",
       "summary": "Family Guy follows Peter Griffin the endearingly ignorant dad, and his hilariously offbeat family of middle-class New Englanders in Quahog, RI. Lois is Peter's wife, a stay-at-home mom with no patience for her family's antics.",
-      "isInWatchlist": true
+      "isInWatchlist": false
     },
     {
       "id": 5,
@@ -53,7 +53,7 @@
       "year": 2022,
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/423/1057625.jpg",
       "summary": "The Voice is a reality singing competition show where the idea is to find new singing talent via a series of auditions.",
-      "isInWatchlist": true
+      "isInWatchlist": false
     },
     {
       "id": 6,
@@ -64,7 +64,7 @@
       "year": 2022,
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/420/1050100.jpg",
       "summary": "The hit series in which celebrities perform choreographed dance routines that are judged by a panel of renowned ballroom experts.",
-      "isInWatchlist": true
+      "isInWatchlist": false
     },
     {
       "id": 7,
@@ -75,7 +75,7 @@
       "year": 2022,
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/424/1061900.jpg",
       "summary": "The Walking Dead tells the story of the months and years that follow after a zombie apocalypse. It follows a group of survivors, led by former police officer Rick Grimes, who travel in search of a safe and secure home.",
-      "isInWatchlist": true
+      "isInWatchlist": false
     },
     {
       "id": 8,
@@ -86,7 +86,7 @@
       "year": 2020,
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/359/898320.jpg",
       "summary": "Modern Family revolves around three different types of families (nuclear, step- and same-sex) living in the Los Angeles area, who are interrelated through Jay Pritchett and his children, Claire Dunphy (née Pritchett) and Mitchell Pritchett.",
-      "isInWatchlist": true
+      "isInWatchlist": false
     },
     {
       "id": 9,
@@ -97,7 +97,7 @@
       "year": 2022,
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/426/1065684.jpg",
       "summary": "In the criminal justice system, sexually-based offenses are considered especially heinous. In New York City, the dedicated detectives who investigate these vicious felonies are members of an elite squad known as the Special Victims Unit. These are their stories.",
-      "isInWatchlist": true
+      "isInWatchlist": false
     },
     {
       "id": 10,
@@ -108,7 +108,7 @@
       "year": 2010,
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/0/1389.jpg",
       "summary": "Out of the blackness, the first thing Jack senses is pain. Then burning sun. A Bamboo forest. Smoke. Screams. With a rush comes the horrible awareness that the plane he was on tore apart in mid-air and crashed on a Pacific island. From there it's a blur, as his doctor's instinct kicks in: people need his help.",
-      "isInWatchlist": true
+      "isInWatchlist": false
     }
   ],
   "login": [

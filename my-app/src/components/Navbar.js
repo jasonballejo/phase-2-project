@@ -8,13 +8,13 @@ function Navbar({ onDarkModeClick, isDarkMode  }) {
         <div>
             <ul className='nav-links'>
                 <li>
-                    <NavLink to="/" exact>Home</NavLink>
+                    <NavLink to="/" exact>HOME</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/Watchlist" exact>Watchlist</NavLink>
+                    <NavLink to="/Watchlist" exact>WATCHLIST</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/login" exact>Login</NavLink>
+                    <NavLink to="/login" exact>LOGIN</NavLink>
                 </li>
             </ul>
             <DarkMode onDarkModeClick={onDarkModeClick} isDarkMode={isDarkMode} />

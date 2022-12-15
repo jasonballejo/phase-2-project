@@ -5,8 +5,8 @@ function Home({ shows, updateItem, handleWatchListItem }) {
     return (
         <div className="title">
             <h1>Welcome to SHOWFLIX!</h1><br />
-            <p>Top movies you love to watch!</p>
-
+            <p>Top movies you love to watch! Just add to you watchlist to preview!</p>
+                <br/>
             <ul className="card">
                 {shows.map(show => 
                     <Card  

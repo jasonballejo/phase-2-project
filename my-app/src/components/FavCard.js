@@ -1,14 +1,10 @@
 import { useState } from "react";
 import Watchlist from "./Watchlist"; 
 
-function Card2 ({ id, name, image, show, isInWatchlist, handleWatchListItem }) {
+function FavCard ({ id, name, image, show, isInWatchlist, handleWatchListItem }) {
     const [thumbsUp, setThumbsUp] = useState(0);
 
     const handleClap = () => setThumbsUp(thumbsUp + 1);
-
-    // const addWatchlistOnClick = () => {
-    //   console.log("Showing:", fetch(`http://localhost:3000/shows/${id}`));
-    // };
 
     const addWatchlistOnClick = () => {
       fetch(`http://localhost:3000/shows/${id}`, {
@@ -48,4 +44,4 @@ function Card2 ({ id, name, image, show, isInWatchlist, handleWatchListItem }) {
 };
 
 
-export default Card2;
+export default FavCard;
