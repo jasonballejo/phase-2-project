@@ -1,9 +1,8 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-function Login() {
-    const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
-    const [isSignedIn, setIsSignedIn] = useState("sign-in")
+function Login({ username, setUsername, password, setPassword, isSignedIn, signedInClicked }) {
+    let navigate = useNavigate();
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -19,21 +18,19 @@ function Login() {
         body: JSON.stringify(itemData),
         })
             .then((res) => res.json())
-            .then((newUser) => console.log(newUser))
+            .then((newUser) => {
+                console.log(newUser)
+                if (isSignedIn === true) {
+                    navigate("/")
+                } else {
+                    navigate("/login")
+                }
+            })
     }
-
-    const formData = {
-        username,
-        password
-    }
-
-    function signedInClicked() {
-        setIsSignedIn((isSignedIn) => !isSignedIn);
-      }
 
     return (
         <div className="formcontainer">
-
+            <h1>{isSignedIn ? `Welcome ${username}` : "Sign in"}</h1>
             <form className="loginform" onSubmit={handleSubmit}>
                 <label htmlFor="username">Username</label>
                 <input
@@ -52,13 +49,18 @@ function Login() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
+            <div className="footerbutton">
+                {/* <button className="submitbutton">
+                    <Link to={`/`}>Home</Link>
+                </button> */}
 
                 <input 
                     className="submitbutton" 
                     type="submit" 
-                    value={isSignedIn ? 'Sign-in' : 'Sign-out'}
+                    value={isSignedIn ? 'Sign-out' : 'Sign-in'}
                     onClick={signedInClicked}
                 /> 
+            </div>
             </form>
         </div>
     )

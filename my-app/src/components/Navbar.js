@@ -2,7 +2,8 @@ import React from 'react';
 import { NavLink } from "react-router-dom"
 import DarkMode from './DarkMode';
 
-function Navbar({ onDarkModeClick, isDarkMode  }) {
+function Navbar({ onDarkModeClick, isDarkMode, username, isSignedIn, signedInClicked  }) {
+
   return (
     <div className="navbar">
         <div>
@@ -14,10 +15,12 @@ function Navbar({ onDarkModeClick, isDarkMode  }) {
                     <NavLink to="/Watchlist" exact>WATCHLIST</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/login" exact>LOGIN</NavLink>
+                    <NavLink to="/login" exact>{isSignedIn ? `${username}` : "LOGIN"}</NavLink>
+                </li>
+                <li>
+                    <DarkMode onDarkModeClick={onDarkModeClick} isDarkMode={isDarkMode} />
                 </li>
             </ul>
-            <DarkMode onDarkModeClick={onDarkModeClick} isDarkMode={isDarkMode} />
         </div>
     </div>
   );

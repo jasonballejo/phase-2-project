@@ -8,10 +8,17 @@ import Home from "./Home";
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [shows, setShows] = useState([])
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  const [isSignedIn, setIsSignedIn] = useState(false)
 
   function onDarkModeClick() {
   setIsDarkMode((isDarkMode) => !isDarkMode);
 }
+
+  function signedInClicked() {
+    setIsSignedIn((isSignedIn) => !isSignedIn);
+  }
 
 useEffect( () => {
   fetch("http://localhost:3000/shows")
@@ -43,7 +50,13 @@ useEffect( () => {
 
 return (
   <div className={(isDarkMode ? "dark" : "light")}> 
-    <Navbar onDarkModeClick={onDarkModeClick} isDarkMode={isDarkMode} />
+    <Navbar 
+      onDarkModeClick={onDarkModeClick} 
+      isDarkMode={isDarkMode} 
+      username={username}
+      isSignedIn={isSignedIn}
+      signedInClicked={signedInClicked}
+    />
     <Routes>
       <Route path="/" element={<Home 
         shows={shows}
@@ -54,7 +67,14 @@ return (
         shows={shows}
         handleWatchListItem={handleWatchListItem}
       />} />
-      <Route path="/login" element={<Login /> 
+      <Route path="/login" element={<Login 
+        username={username}
+        setUsername={setUsername}
+        password={password}
+        setPassword={setPassword}
+        isSignedIn={isSignedIn}
+        signedInClicked={signedInClicked}
+      /> 
       } />
     </Routes>
   </div>

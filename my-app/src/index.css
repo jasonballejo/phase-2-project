@@ -19,7 +19,6 @@ body {
   border-radius: 50px;
   padding: 5px;
   margin: 5px;
-  float: right;
 }
 
 .dark {
@@ -208,7 +207,7 @@ body {
   width: 30%;
 }
 
-.formcontainer, .loginform, .registerform {
+.formcontainer, .loginform {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -217,15 +216,35 @@ body {
   font-size: large;
 }
 
-.submitbutton {
-  color: black;
-  margin: 5px;
+.formcontainer h1 {
+  color: white;
+  align-content: left;
 }
 
-.linkbutton {
+.submitbutton {
+  /* color: black;
+  margin: 5px; */
+  border-radius: 20px;
+  width: 80px;
+  height: 30px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.submitbutton a {
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+
+.footerbutton {
+  padding-top: 10px;
+}
+
+/* .linkbutton {
   background-color: rgb(172, 172, 172);
   color: black;
   text-decoration: underline;
   border: none;
   cursor: pointer;
-}
+} */
