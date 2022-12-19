@@ -9,7 +9,7 @@
       "year": 2022,
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/423/1058261.jpg",
       "summary": "The Simpsons is the longest running scripted show in US television history. It captures the adventures of Homer, Marge, Maggie, Bart and Lisa who are living in a fictional town called Springfield.",
-      "isInWatchlist": false
+      "isInWatchlist": true
     },
     {
       "id": 2,
@@ -31,7 +31,7 @@
       "year": 2019,
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/173/433868.jpg",
       "summary": "The Big Bang Theory is a comedy about brilliant physicists, Leonard and Sheldon, who are the kind of beautiful minds that understand how the universe works. But none of that genius helps them interact with people, especially women. All this begins to change when a free-spirited beauty named Penny moves in next door.",
-      "isInWatchlist": false
+      "isInWatchlist": true
     },
     {
       "id": 4,
@@ -42,7 +42,7 @@
       "year": 2022,
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/423/1058269.jpg",
       "summary": "Family Guy follows Peter Griffin the endearingly ignorant dad, and his hilariously offbeat family of middle-class New Englanders in Quahog, RI. Lois is Peter's wife, a stay-at-home mom with no patience for her family's antics.",
-      "isInWatchlist": false
+      "isInWatchlist": true
     },
     {
       "id": 5,
@@ -75,7 +75,7 @@
       "year": 2022,
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/424/1061900.jpg",
       "summary": "The Walking Dead tells the story of the months and years that follow after a zombie apocalypse. It follows a group of survivors, led by former police officer Rick Grimes, who travel in search of a safe and secure home.",
-      "isInWatchlist": false
+      "isInWatchlist": true
     },
     {
       "id": 8,
@@ -109,6 +109,17 @@
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/0/1389.jpg",
       "summary": "Out of the blackness, the first thing Jack senses is pain. Then burning sun. A Bamboo forest. Smoke. Screams. With a rush comes the horrible awareness that the plane he was on tore apart in mid-air and crashed on a Pacific island. From there it's a blur, as his doctor's instinct kicks in: people need his help.",
       "isInWatchlist": false
+    },
+    {
+      "id": 11,
+      "name": "That '70s Show",
+      "type": "Scripted",
+      "language": "English",
+      "genres": "Comedy",
+      "year": 1998,
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/4/11921.jpg",
+      "summary": "Crank up the 8-track and flash back to a time when platform shoes and puka shells were all the rage in this hilarious retro-sitcom. For Eric, Kelso, Jackie, Hyde, Donna and Fez, a group of high school teens who spend most of their time hanging out in Eric's basement, life in the 70s isn't always so groovy. But between trying to figure out the meaning of life, avoiding their parents, and dealing with out-of-control hormones, they've learned one thing for sure: they'll always get by with a little help from their friends.",
+      "isInWatchlist": true
     }
   ],
   "login": [
@@ -118,9 +129,14 @@
       "password": "Batman123"
     },
     {
-      "name": "sdfsf",
-      "password": "sdfds",
+      "name": "JasonBallejo",
+      "password": "Password123",
       "id": 2
+    },
+    {
+      "name": "Harry",
+      "password": "Potter",
+      "id": 3
     }
   ]
 }
