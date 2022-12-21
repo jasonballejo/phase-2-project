@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import Navbar from './Navbar';
-import Login from './Login';
+import AddShow from './AddShow';
 import Watchlist from './Watchlist';
 import Home from "./Home";
 
@@ -67,7 +67,7 @@ return (
         shows={shows}
         handleWatchListItem={handleWatchListItem}
       />} />
-      <Route path="/login" element={<Login 
+      <Route path="/addshow" element={<AddShow 
         username={username}
         setUsername={setUsername}
         password={password}

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Watchlist from "./Watchlist"; 
+import Watchlist from "./Watchlist";
+import Popup from "./Popup"; 
 
 function Card ({ name, image, year, genres, show, handleWatchListItem }) {
-    const [thumbsUp, setThumbsUp] = useState(0);
-    const handleThumbsUp = () => setThumbsUp(thumbsUp + 1);
+    const [btnPopup, setBtnPopup] = useState(false);
 
     const addWatchlistOnClick = () => {
       fetch(`http://localhost:3000/shows/${show.id}`, {
@@ -31,9 +31,9 @@ function Card ({ name, image, year, genres, show, handleWatchListItem }) {
           </section>
     
           <footer className="extra">
-            <button className="thumbsup" onClick={handleThumbsUp}>
-              👍🏼{thumbsUp}
-            </button>
+            <button className="add" onClick={() => setBtnPopup(true)}>DETAILS</button>
+              <Popup trigger={btnPopup} setTrigger={setBtnPopup}>
+              </Popup>
 
             <button 
                 className={show.isInWatchlist ? "remove" : "add"}

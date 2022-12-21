@@ -12,10 +12,10 @@ function Navbar({ onDarkModeClick, isDarkMode, username, isSignedIn, signedInCli
                     <NavLink to="/" exact>HOME</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/Watchlist" exact>WATCHLIST</NavLink>
+                    <NavLink to="/watchlist" exact>WATCHLIST</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/login" exact>{isSignedIn ? `${username}` : "LOGIN"}</NavLink>
+                    <NavLink to="/addshow" exact>{isSignedIn ? `${username}` : "ADD SHOW"}</NavLink>
                 </li>
                 <li>
                     <DarkMode onDarkModeClick={onDarkModeClick} isDarkMode={isDarkMode} />

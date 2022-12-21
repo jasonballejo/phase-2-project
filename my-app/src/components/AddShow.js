@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-function Login({ username, setUsername, password, setPassword, isSignedIn, signedInClicked }) {
+function AddShow({ username, setUsername, password, setPassword, isSignedIn, signedInClicked }) {
     let navigate = useNavigate();
 
     function handleSubmit(e) {
@@ -66,4 +66,4 @@ function Login({ username, setUsername, password, setPassword, isSignedIn, signe
     )
 }
 
-export default Login;
+export default AddShow;
