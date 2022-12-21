@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-import Watchlist from "./Watchlist";
+import React from "react";
 import Popup from "./Popup"; 
 
-function Card ({ name, image, year, genres, show, handleWatchListItem }) {
-    const [btnPopup, setBtnPopup] = useState(false);
-
+function Card ({ name, image, year, genres, show, handleWatchListItem, btnPopup, setBtnPopup }) {
     const addWatchlistOnClick = () => {
       fetch(`http://localhost:3000/shows/${show.id}`, {
     method: "PATCH",
@@ -32,7 +29,10 @@ function Card ({ name, image, year, genres, show, handleWatchListItem }) {
     
           <footer className="extra">
             <button className="add" onClick={() => setBtnPopup(true)}>DETAILS</button>
-              <Popup trigger={btnPopup} setTrigger={setBtnPopup}>
+              <Popup 
+                trigger={btnPopup} 
+                setTrigger={setBtnPopup} 
+              >
               </Popup>
 
             <button 

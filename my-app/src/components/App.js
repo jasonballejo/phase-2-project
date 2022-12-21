@@ -11,6 +11,7 @@ function App() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [isSignedIn, setIsSignedIn] = useState(false)
+  const [btnPopup, setBtnPopup] = useState(false)
 
   function onDarkModeClick() {
   setIsDarkMode((isDarkMode) => !isDarkMode);
@@ -62,10 +63,14 @@ return (
         shows={shows}
         updateItem={handleUpdateItem}
         handleWatchListItem={handleWatchListItem}
+        btnPopup={btnPopup}
+        setBtnPopup={setBtnPopup}
       />} />
       <Route path="/watchlist" element={<Watchlist 
         shows={shows}
         handleWatchListItem={handleWatchListItem}
+        btnPopup={btnPopup}
+        setBtnPopup={setBtnPopup}
       />} />
       <Route path="/addshow" element={<AddShow 
         username={username}

@@ -1,7 +1,7 @@
 import React from "react";
 import FavCard from "./FavCard"
 
-function Watchlist({ shows, handleWatchListItem }) {
+function Watchlist({ shows, handleWatchListItem, btnPopup, setBtnPopup }) {
     const favorites = shows.filter(object => object.isInWatchlist) 
 
     return (
@@ -16,6 +16,8 @@ function Watchlist({ shows, handleWatchListItem }) {
                         fav={fav}
                         show={shows}
                         handleWatchListItem={handleWatchListItem}
+                        btnPopup={btnPopup}
+                        setBtnPopup={setBtnPopup}
                 />)}
             </ul>
         </div>

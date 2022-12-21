@@ -1,10 +1,8 @@
-import { useState } from "react";
-import Watchlist from "./Watchlist"; 
+import React from "react";
+import Popup from "./Popup"; 
 
-function FavCard ({ id, name, image, show, isInWatchlist, handleWatchListItem }) {
-    const [thumbsUp, setThumbsUp] = useState(0);
+function FavCard ({ id, name, image, show, isInWatchlist, handleWatchListItem, btnPopup, setBtnPopup }) {
 
-    const handleClap = () => setThumbsUp(thumbsUp + 1);
 
     const addWatchlistOnClick = () => {
       fetch(`http://localhost:3000/shows/${id}`, {
@@ -27,9 +25,12 @@ function FavCard ({ id, name, image, show, isInWatchlist, handleWatchListItem })
       </figure>
 
       <footer className="extra">
-        <button className="thumbsup" onClick={handleClap}>
-          👍🏼{thumbsUp}
-        </button>
+        <button className="add" onClick={() => setBtnPopup(true)}>DETAILS</button>
+              <Popup 
+                trigger={btnPopup} 
+                setTrigger={setBtnPopup} 
+              >
+              </Popup>
 
         <button 
           className="remove"
