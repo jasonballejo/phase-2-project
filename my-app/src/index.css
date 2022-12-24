@@ -215,7 +215,7 @@ body {
   color: black;
   padding: 30px;
   margin: auto;
-  margin-top: 10%;
+  margin-top: 4%;
   width: 50%;
 }
 
@@ -226,6 +226,10 @@ body {
   text-align: center;
   justify-content: center;
   /* font-size: large; */
+}
+
+.formcontainer .addshowform input {
+  text-align: center;
 }
 
 .formcontainer h1 {

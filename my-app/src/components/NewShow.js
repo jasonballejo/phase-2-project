@@ -6,7 +6,7 @@ function NewShow({ addNewShow }) {
     const [type, setType] = useState("");
     const [language, setLanguage] = useState("English");
     const [genres, setGenres] = useState("");
-    const [year, setYear] = useState(0);
+    const [year, setYear] = useState("");
     const [image, setImage] = useState("");
     const [summary, setSummary] = useState("");
     const [isInWatchlist, setIsInWatchlist] = useState(false);
@@ -121,7 +121,7 @@ function NewShow({ addNewShow }) {
 
                 <label htmlFor="year">Year</label>
                 <input
-                    type="number"
+                    type="text"
                     id="year"
                     value={year}
                     onChange={(e) => setYear(e.target.value)}
