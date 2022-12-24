@@ -211,24 +211,31 @@ body {
   object-fit: cover;
 }
 .formcontainer {
-  background-color: rgb(172, 172, 172);
-  padding: 100px;
+  background-color: white;
+  color: black;
+  padding: 30px;
   margin: auto;
-  width: 30%;
+  margin-top: 10%;
+  width: 50%;
 }
 
-.formcontainer, .loginform {
+.formcontainer, .addshowform {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   justify-content: center;
-  font-size: large;
+  /* font-size: large; */
 }
 
 .formcontainer h1 {
   color: var(--accent-color);
   align-content: left;
+  padding-bottom: 10px;
+}
+
+.label {
+  /* font-size: large; */
 }
 
 .submitbutton {
@@ -331,3 +338,8 @@ body {
 .footerpopup {
   /* background-color: aqua; */
 }
+
+/* .checkbox {
+  padding: 10px;
+  margin-top: 10px;
+} */

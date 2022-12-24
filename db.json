@@ -120,28 +120,21 @@
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/4/11921.jpg",
       "summary": "Crank up the 8-track and flash back to a time when platform shoes and puka shells were all the rage in this hilarious retro-sitcom. For Eric, Kelso, Jackie, Hyde, Donna and Fez, a group of high school teens who spend most of their time hanging out in Eric's basement, life in the 70s isn't always so groovy. But between trying to figure out the meaning of life, avoiding their parents, and dealing with out-of-control hormones, they've learned one thing for sure: they'll always get by with a little help from their friends.",
       "isInWatchlist": false
-    }
-  ],
-  "login": [
-    {
-      "id": 1,
-      "username": "Bruce Wayne",
-      "password": "Batman123"
     },
     {
-      "name": "JasonBallejo",
-      "password": "Password123",
-      "id": 2
-    },
-    {
-      "name": "Harry",
-      "password": "Potter",
-      "id": 3
-    },
-    {
-      "name": "Jason",
-      "password": "Jason123",
-      "id": 4
+      "name": "ddd",
+      "type": [
+        "Reality"
+      ],
+      "language": "English",
+      "genres": [
+        "Family"
+      ],
+      "year": 0,
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/4/11921.jpg",
+      "summary": "ddddd",
+      "isInWatchlist": false,
+      "id": 12
     }
   ]
 }
