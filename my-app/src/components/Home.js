@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./Card";
 
-function Home({ shows, updateItem, handleWatchListItem, btnPopup, setBtnPopup }) {
+function Home({ shows, updateItem, handleWatchListItem, btnPopup, setBtnPopup, onUpdateItem, onDeleteItem }) {
     return (
         <div className="title">
             <h1>Welcome to SHOWFLIX!</h1><br />
@@ -17,6 +17,8 @@ function Home({ shows, updateItem, handleWatchListItem, btnPopup, setBtnPopup })
                         handleWatchListItem={handleWatchListItem}
                         btnPopup={btnPopup}
                         setBtnPopup={setBtnPopup}
+                        onUpdateItem={onUpdateItem}
+                        onDeleteItem={onDeleteItem}
                     />)}
             </ul>
         </div>

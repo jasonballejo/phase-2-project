@@ -46,6 +46,11 @@ useEffect( () => {
     setShows([...shows, newShow]);
   }
 
+  function handleDeleteItem(deletedItem){
+    const updateShows = shows.filter((show) => show.id !== deletedItem.id)
+    setShows(updateShows);
+  }
+
 return (
   <div className={(isDarkMode ? "dark" : "light")}> 
     <Navbar 
@@ -59,6 +64,8 @@ return (
         handleWatchListItem={handleWatchListItem}
         btnPopup={btnPopup}
         setBtnPopup={setBtnPopup}
+        onUpdateItem={handleUpdateItem}
+        onDeleteItem={handleDeleteItem}
       />} />
       <Route path="/watchlist" element={<Watchlist 
         shows={shows}

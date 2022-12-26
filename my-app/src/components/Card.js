@@ -1,9 +1,7 @@
 import React from "react";
 import Popup from "./Popup"; 
 
-function Card ({ name, image, year, genres, show, summary, handleWatchListItem, btnPopup, setBtnPopup }) {
-
-    // const showSelected = show.filter(object => object.id)
+function Card ({ name, image, year, genres, show, summary, handleWatchListItem, btnPopup, setBtnPopup, onUpdateItem, onDeleteItem }) {
 
     const addWatchlistOnClick = () => {
       fetch(`http://localhost:3000/shows/${show.id}`, {
@@ -19,15 +17,17 @@ function Card ({ name, image, year, genres, show, summary, handleWatchListItem, 
     .then((updatedItem) => handleWatchListItem(updatedItem));
     };
 
-    // const selectedShowFetch = () => {
-    //   fetch(`http://localhost:3000/shows/${show.id}`, {
-    //     method: "GET"
-    //   })
-    // }
-
-    function multiClick() {
-      setBtnPopup(true);
+    const handleDeleteClick = () => {
+      fetch(`http://localhost:3000/shows/${show.id}`, {
+        method: "DELETE",
+      })
+        .then((r) => r.json())
+        .then(() => onDeleteItem("deleted!"));
     }
+
+    // function multiClick() {
+    //   setBtnPopup(true);
+    // }
 
     return (
         <li className="card">
@@ -41,23 +41,21 @@ function Card ({ name, image, year, genres, show, summary, handleWatchListItem, 
           </section>
     
           <footer className="extra">
-            <button className="add" onClick={() => multiClick()}>DETAILS</button>
-            {/* {showSelected.map(selected => */}
-              <Popup 
-                // key={selected.id}
-                // {...selected}
-                trigger={btnPopup} 
-                setTrigger={setBtnPopup}
-              >
-              </Popup>
-              {/* )} */}
 
-            <button 
+          <button 
                 className={show.isInWatchlist ? "remove" : "add"}
                 onClick={addWatchlistOnClick}
             >
                 {show.isInWatchlist ? "➖  REMOVE" : "➕ WATCHLIST" }
             </button>
+
+            <button className="add" onClick={handleDeleteClick}>DELETE</button>
+            {/* Work on this later */}
+              {/* <Popup 
+                trigger={btnPopup} 
+                setTrigger={setBtnPopup}
+              >
+              </Popup> */}
           </footer>
         </li>
       );
