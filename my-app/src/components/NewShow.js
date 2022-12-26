@@ -42,7 +42,7 @@ function NewShow({ addNewShow }) {
     }
 
     const typeCheckbox = typeList.map(types => {
-        const label = types.toLowerCase()
+        const label = types.toString().toLowerCase();
         const checked = type.includes(types)
         function handleChange(e) {
             if (e.target.checked) {
@@ -66,7 +66,7 @@ function NewShow({ addNewShow }) {
     })
 
     const genresCheckbox = genresList.map(genre => {
-        const label = genre.toLowerCase()
+        const label = genre.toString().toLowerCase();
         const checked = genres.includes(genre)
         function handleChange(e) {
             if (e.target.checked) {
