@@ -1,7 +1,10 @@
 import React from "react";
 import Popup from "./Popup"; 
 
-function Card ({ name, image, year, genres, show, handleWatchListItem, btnPopup, setBtnPopup }) {
+function Card ({ name, image, year, genres, show, summary, handleWatchListItem, btnPopup, setBtnPopup }) {
+
+    // const showSelected = show.filter(object => object.id)
+
     const addWatchlistOnClick = () => {
       fetch(`http://localhost:3000/shows/${show.id}`, {
     method: "PATCH",
@@ -16,6 +19,16 @@ function Card ({ name, image, year, genres, show, handleWatchListItem, btnPopup,
     .then((updatedItem) => handleWatchListItem(updatedItem));
     };
 
+    // const selectedShowFetch = () => {
+    //   fetch(`http://localhost:3000/shows/${show.id}`, {
+    //     method: "GET"
+    //   })
+    // }
+
+    function multiClick() {
+      setBtnPopup(true);
+    }
+
     return (
         <li className="card">
           <figure className="image">
@@ -28,12 +41,16 @@ function Card ({ name, image, year, genres, show, handleWatchListItem, btnPopup,
           </section>
     
           <footer className="extra">
-            <button className="add" onClick={() => setBtnPopup(true)}>DETAILS</button>
+            <button className="add" onClick={() => multiClick()}>DETAILS</button>
+            {/* {showSelected.map(selected => */}
               <Popup 
+                // key={selected.id}
+                // {...selected}
                 trigger={btnPopup} 
-                setTrigger={setBtnPopup} 
+                setTrigger={setBtnPopup}
               >
               </Popup>
+              {/* )} */}
 
             <button 
                 className={show.isInWatchlist ? "remove" : "add"}

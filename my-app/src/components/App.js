@@ -42,17 +42,6 @@ useEffect( () => {
     setShows(updatedItems);
   }
 
-  // function handleUpdateCreatedShow(newShow) {
-  //   const updatedNewShow = shows.map((show) => {
-  //     if (show.id === newShow.id) {
-  //       return newShow;
-  //     } else {
-  //       return show;
-  //     }
-  //   });
-  //   setShows(updatedNewShow);
-  // }
-
   function handleUpdateCreatedShow(newShow) {
     setShows([...shows, newShow]);
   }
