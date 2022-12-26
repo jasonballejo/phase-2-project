@@ -10,16 +10,19 @@ function App() {
   const [shows, setShows] = useState([])
   const [btnPopup, setBtnPopup] = useState(false)
 
+  //Fetch data
+  useEffect( () => {
+    fetch("http://localhost:3000/shows")
+      .then((res) => res.json())
+      .then(showData => setShows(showData))
+  },[])
+
+  //Darkmode onClick
   function onDarkModeClick() {
-  setIsDarkMode((isDarkMode) => !isDarkMode);
-}
+    setIsDarkMode((isDarkMode) => !isDarkMode);
+  }
 
-useEffect( () => {
-  fetch("http://localhost:3000/shows")
-    .then((res) => res.json())
-    .then(showData => setShows(showData))
-},[])
-
+  //Handles the Watchlist update
   function handleWatchListItem(updatedShow) {
     const updatedWatchlist = shows.map((show) => {
       if (show.id === updatedShow.id){
@@ -31,6 +34,7 @@ useEffect( () => {
     setShows(updatedWatchlist) 
   }
 
+  //Handles the 
   function handleUpdateItem(updatedItem) {
     const updatedItems = shows.map((show) => {
       if (show.id === updatedItem.id) {
@@ -42,10 +46,12 @@ useEffect( () => {
     setShows(updatedItems);
   }
 
+  //Handles new show to state so it can appear
   function handleUpdateCreatedShow(newShow) {
     setShows([...shows, newShow]);
   }
 
+  //Handles the Click to Delete
   function handleDeleteItem(deletedItem){
     const updateShows = shows.filter((show) => show.id !== deletedItem.id)
     setShows(updateShows);
@@ -60,11 +66,9 @@ return (
     <Routes>
       <Route path="/" element={<Home 
         shows={shows}
-        updateItem={handleUpdateItem}
         handleWatchListItem={handleWatchListItem}
         btnPopup={btnPopup}
         setBtnPopup={setBtnPopup}
-        onUpdateItem={handleUpdateItem}
         onDeleteItem={handleDeleteItem}
       />} />
       <Route path="/watchlist" element={<Watchlist 

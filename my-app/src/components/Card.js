@@ -1,9 +1,10 @@
 import React from "react";
 import Popup from "./Popup"; 
 
-function Card ({ name, image, year, genres, show, summary, handleWatchListItem, btnPopup, setBtnPopup, onUpdateItem, onDeleteItem }) {
+function Card ({ name, image, year, genres, show, summary, handleWatchListItem, btnPopup, setBtnPopup, onDeleteItem }) {
 
-    const addWatchlistOnClick = () => {
+  //Updates the "isInWatchList" property
+  const addWatchlistOnClick = () => {
       fetch(`http://localhost:3000/shows/${show.id}`, {
     method: "PATCH",
     headers: {
@@ -22,7 +23,7 @@ function Card ({ name, image, year, genres, show, summary, handleWatchListItem, 
         method: "DELETE",
       })
         .then((r) => r.json())
-        .then(() => onDeleteItem("deleted!"));
+        .then(() => onDeleteItem(show));
     }
 
     // function multiClick() {

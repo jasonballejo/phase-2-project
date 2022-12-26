@@ -25,12 +25,12 @@ function FavCard ({ id, name, image, show, isInWatchlist, handleWatchListItem, b
       </figure>
 
       <footer className="extra">
-        <button className="add" onClick={() => setBtnPopup(true)}>DETAILS</button>
-              <Popup 
+        {/* <button className="add" onClick={() => setBtnPopup(true)}>DETAILS</button> */}
+              {/* <Popup 
                 trigger={btnPopup} 
                 setTrigger={setBtnPopup} 
               >
-              </Popup>
+              </Popup> */}
 
         <button 
           className="remove"
