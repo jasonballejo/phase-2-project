@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function NewShow({ addNewShow }) {
     const [name, setName] = useState("");
@@ -8,7 +8,6 @@ function NewShow({ addNewShow }) {
     const [genres, setGenres] = useState("");
     const [year, setYear] = useState("");
     const [image, setImage] = useState("");
-    const [summary, setSummary] = useState("");
     const [isInWatchlist, setIsInWatchlist] = useState(false);
 
     let navigate = useNavigate();
@@ -24,7 +23,6 @@ function NewShow({ addNewShow }) {
             genres: genres,
             year: year,
             image: image,
-            summary: summary,
             isInWatchlist: isInWatchlist
     };
         fetch("http://localhost:3000/shows", {
@@ -37,7 +35,7 @@ function NewShow({ addNewShow }) {
            .then((res) => res.json())
            .then(data => {
                 addNewShow(data)
-                    return navigate("/")
+                    navigate("/")
                 })
     }
 
@@ -135,18 +133,7 @@ function NewShow({ addNewShow }) {
                     onChange={(e) => setImage(e.target.value)}
                 />
 
-                <label htmlFor="summary">Summary</label>
-                <textarea
-                    id="summary"
-                    value={summary}
-                    onChange={(e) => setSummary(e.target.value)}
-                />
-
             <div className="footerbutton">
-                {/* <button className="submitbutton">
-                    <Link to={`/`}>Home</Link>
-                </button> */}
-
                 <input 
                     className="submitbutton" 
                     type="submit"

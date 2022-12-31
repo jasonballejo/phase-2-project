@@ -11,5 +11,4 @@ function DarkMode({ onDarkModeClick, isDarkMode  }) {
     )
 }
 
-
 export default DarkMode;

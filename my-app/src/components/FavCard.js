@@ -1,10 +1,8 @@
 import React from "react";
-import Popup from "./Popup"; 
 
-function FavCard ({ id, name, image, show, isInWatchlist, handleWatchListItem, btnPopup, setBtnPopup }) {
-
-
-    const addWatchlistOnClick = () => {
+function FavCard ({ id, name, image, show, isInWatchlist, handleWatchListItem }) {
+    
+  const addWatchlistOnClick = () => {
       fetch(`http://localhost:3000/shows/${id}`, {
     method: "PATCH",
     headers: {
@@ -25,12 +23,6 @@ function FavCard ({ id, name, image, show, isInWatchlist, handleWatchListItem, b
       </figure>
 
       <footer className="extra">
-        {/* <button className="add" onClick={() => setBtnPopup(true)}>DETAILS</button> */}
-              {/* <Popup 
-                trigger={btnPopup} 
-                setTrigger={setBtnPopup} 
-              >
-              </Popup> */}
 
         <button 
           className="remove"
@@ -43,6 +35,5 @@ function FavCard ({ id, name, image, show, isInWatchlist, handleWatchListItem, b
     </li>
   );
 };
-
 
 export default FavCard;

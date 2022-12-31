@@ -1,9 +1,7 @@
 import React from "react";
-import Popup from "./Popup"; 
 
-function Card ({ name, image, year, genres, show, summary, handleWatchListItem, btnPopup, setBtnPopup, onDeleteItem }) {
+function Card ({ name, image, year, genres, show, handleWatchListItem, onDeleteItem }) {
 
-  //Updates the "isInWatchList" property
   const addWatchlistOnClick = () => {
       fetch(`http://localhost:3000/shows/${show.id}`, {
     method: "PATCH",
@@ -26,10 +24,6 @@ function Card ({ name, image, year, genres, show, summary, handleWatchListItem, 
         .then(() => onDeleteItem(show));
     }
 
-    // function multiClick() {
-    //   setBtnPopup(true);
-    // }
-
     return (
         <li className="card">
           <figure className="image">
@@ -51,12 +45,7 @@ function Card ({ name, image, year, genres, show, summary, handleWatchListItem, 
             </button>
 
             <button className="add" onClick={handleDeleteClick}>DELETE</button>
-            {/* Work on this later */}
-              {/* <Popup 
-                trigger={btnPopup} 
-                setTrigger={setBtnPopup}
-              >
-              </Popup> */}
+           
           </footer>
         </li>
       );
