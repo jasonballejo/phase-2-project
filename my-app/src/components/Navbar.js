@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from "react-router-dom"
 import DarkMode from './DarkMode';
 
-function Navbar({ onDarkModeClick, isDarkMode, username  }) {
+function Navbar({ onDarkModeClick, isDarkMode  }) {
 
   return (
     <div className="navbar">

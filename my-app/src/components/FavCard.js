@@ -1,6 +1,6 @@
 import React from "react";
 
-function FavCard ({ id, name, image, show, isInWatchlist, handleWatchListItem }) {
+function FavCard ({ id, name, image, isInWatchlist, handleWatchListItem }) {
     
   const addWatchlistOnClick = () => {
       fetch(`http://localhost:3000/shows/${id}`, {
