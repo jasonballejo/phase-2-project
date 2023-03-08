@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import NewShow from './NewShow';
 import Watchlist from './Watchlist';
 import Home from "./Home";
+import Counter from './Counter';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -57,8 +58,8 @@ return (
       />} />
       <Route path="/newshow" element={<NewShow 
         addNewShow={handleUpdateCreatedShow}
-      /> 
-      } />
+      /> } /> 
+      <Route path="/counter" element={<Counter />} />
     </Routes>
   </div>
 );

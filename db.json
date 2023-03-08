@@ -31,7 +31,7 @@
       "year": 2019,
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/173/433868.jpg",
       "summary": "The Big Bang Theory is a comedy about brilliant physicists, Leonard and Sheldon, who are the kind of beautiful minds that understand how the universe works. But none of that genius helps them interact with people, especially women. All this begins to change when a free-spirited beauty named Penny moves in next door.",
-      "isInWatchlist": false
+      "isInWatchlist": true
     },
     {
       "id": 4,
@@ -97,7 +97,7 @@
       "year": 2022,
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/426/1065684.jpg",
       "summary": "In the criminal justice system, sexually-based offenses are considered especially heinous. In New York City, the dedicated detectives who investigate these vicious felonies are members of an elite squad known as the Special Victims Unit. These are their stories.",
-      "isInWatchlist": false
+      "isInWatchlist": true
     },
     {
       "id": 10,
@@ -120,6 +120,31 @@
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/4/11921.jpg",
       "summary": "Crank up the 8-track and flash back to a time when platform shoes and puka shells were all the rage in this hilarious retro-sitcom. For Eric, Kelso, Jackie, Hyde, Donna and Fez, a group of high school teens who spend most of their time hanging out in Eric's basement, life in the 70s isn't always so groovy. But between trying to figure out the meaning of life, avoiding their parents, and dealing with out-of-control hormones, they've learned one thing for sure: they'll always get by with a little help from their friends.",
       "isInWatchlist": true
+    },
+    {
+      "id": 13,
+      "name": "That 90's Show",
+      "type": "Scripted",
+      "language": "English",
+      "genres": "Comedy",
+      "year": 2023,
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/4/11921.jpg",
+      "summary": "Crank up the 8-track and flash back to a time when platform shoes and puka shells were all the rage in this hilarious retro-sitcom. For Eric, Kelso, Jackie, Hyde, Donna and Fez, a group of high school teens who spend most of their time hanging out in Eric's basement, life in the 70s isn't always so groovy. But between trying to figure out the meaning of life, avoiding their parents, and dealing with out-of-control hormones, they've learned one thing for sure: they'll always get by with a little help from their friends.",
+      "isInWatchlist": true
+    },
+    {
+      "name": "Friends",
+      "type": [
+        "Scripted"
+      ],
+      "language": "English",
+      "genres": [
+        "Comedy"
+      ],
+      "year": "1994",
+      "image": "https://www.tvguide.com/a/img/catalog/provider/1/1/1-9006171376.jpg",
+      "isInWatchlist": false,
+      "id": 12
     }
   ]
 }

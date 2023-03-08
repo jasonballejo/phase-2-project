@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import FavCard from "./FavCard"
 
 function Watchlist({ shows, handleWatchListItem }) {
@@ -7,12 +7,12 @@ function Watchlist({ shows, handleWatchListItem }) {
     return (
         <div className="title">
             <h1>Watchlist</h1>
-            
+
             <ul className="card">
                 {favorites.map(fav => 
                     <FavCard 
                         key={fav.id} 
-                        {...fav} 
+                        // {...fav} 
                         fav={fav}
                         show={shows}
                         handleWatchListItem={handleWatchListItem}
