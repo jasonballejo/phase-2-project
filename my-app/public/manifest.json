@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Showflix",
+  "name": "Showflex, library of tv shows where you can add and remove your favorite tv shows to a watchlist.",
   "icons": [
     {
       "src": "favicon.ico",

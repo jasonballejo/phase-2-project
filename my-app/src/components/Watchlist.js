@@ -12,7 +12,7 @@ function Watchlist({ shows, handleWatchListItem }) {
                 {favorites.map(fav => 
                     <FavCard 
                         key={fav.id} 
-                        // {...fav} 
+                        {...fav} 
                         fav={fav}
                         show={shows}
                         handleWatchListItem={handleWatchListItem}

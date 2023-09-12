@@ -17,9 +17,9 @@ function Navbar({ onDarkModeClick, isDarkMode  }) {
                 <li>
                     <NavLink to="/newshow" exact>NEW SHOW</NavLink>
                 </li>
-                <li>
+                {/* <li>
                     <NavLink to="/counter" exact>COUNTER</NavLink>
-                </li>
+                </li> */}
                 <li>
                     <DarkMode onDarkModeClick={onDarkModeClick} isDarkMode={isDarkMode} />
                 </li>

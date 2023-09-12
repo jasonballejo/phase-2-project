@@ -59,7 +59,7 @@ return (
       <Route path="/newshow" element={<NewShow 
         addNewShow={handleUpdateCreatedShow}
       /> } /> 
-      <Route path="/counter" element={<Counter />} />
+      {/* <Route path="/counter" element={<Counter />} /> */}
     </Routes>
   </div>
 );
