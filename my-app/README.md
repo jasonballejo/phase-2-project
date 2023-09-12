@@ -6,7 +6,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm json-server --watch db.json`
+
+Runs the db server locally.
+
+### `Errors starting the server?`
+
+If you run into any issues, remove the "package-lock.json" and "npm install".
+
+### `Then run, npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
